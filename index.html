@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Magical Winter - Interactive</title>
+    <title>Magical Winter - Final Version</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="background-linear"></div>
 
-    <!-- Popup Container -->
+    <!-- Interactive Popups -->
     <div id="custom-popup" class="popup-overlay" onclick="closePopup()">
         <div class="popup-content" onclick="event.stopPropagation()">
             <p id="popup-text"></p>
@@ -19,9 +19,10 @@
 
     <div class="wrapper">
         <div class="winter-wrapper">
-            <!-- Falling Snow -->
+            <!-- Restored Snow Wrappers for Infinite Loop -->
             <div class="snow-wrapper big">
-                <div class="snow-wrap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="snow-wrap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="snow-wrap snd"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             </div>
 
             <div class="winter-wrap">
@@ -29,30 +30,31 @@
                 <div class="bottom-snow"><span></span></div>
                 <div class="middle-snow"></div>
                 
-                <!-- City Skyline -->
-                <div class="buildings">
-                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                </div>
+                <!-- Full City Skyline -->
+                <div class="buildings"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="buildings back"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
-                <!-- LEFT TREE (Male Name) -->
+                <!-- LEFT TREE - TOUCH FOR MALE NAME -->
                 <div class="tree interactive" onclick="showPopup('Male Name: Alexander')">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
 
-                <!-- RIGHT TREE (Female Name) -->
+                <!-- RIGHT TREE - TOUCH FOR FEMALE NAME -->
                 <div class="tree right interactive" onclick="showPopup('Female Name: Isabella')">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
 
-                <!-- BENCH (Venue Details) -->
+                <!-- BENCH - TOUCH FOR VENUE -->
                 <div class="bench interactive" onclick="showPopup('Venue: Winter Garden\nTime: 7:00 PM\nDate: Dec 24, 2026')">
                     <div class="bench-wrap">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </div>
                 </div>
 
                 <div class="lamp"><div class="lamp-wrap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+                <div class="swing"></div>
+                <div class="swing-over-wrap"><div class="swing-over"><span></span><span></span><span></span></div></div>
+                <div class="bin"><span></span><span></span></div>
             </div>
         </div>
     </div>
