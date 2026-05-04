@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Magical Winter - Interactive</title>
+    <title>Magical Winter - Interactive Scene</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="background-linear"></div>
 
-    <!-- Popup Container -->
-    <div id="custom-popup" class="popup-overlay">
+    <!-- Popup Overlay -->
+    <div id="info-popup" class="popup-overlay">
         <div class="popup-content">
             <p id="popup-text"></p>
             <button onclick="closePopup()">Close</button>
@@ -19,45 +19,57 @@
 
     <div class="wrapper">
         <div class="winter-wrapper">
-            <!-- Snow Layers (omitted for brevity, keep your original spans) -->
+            <!-- Falling Snow Layers -->
+            <div class="snow-wrapper big">
+                <div class="snow-wrap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="snow-wrap snd"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="snow-wrap trd"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            
             <div class="winter-wrap">
                 <div class="sun"></div>
                 <div class="bottom-snow"><span></span></div>
                 <div class="middle-snow"></div>
                 
-                <!-- Buildings (keep your original spans) -->
+                <div class="buildings"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="buildings back"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                
+                <div class="swing"></div>
+                <div class="swing-over-wrap"><div class="swing-over"><span></span><span></span><span></span></div></div>
 
                 <!-- Interactive Left Tree -->
-                <div class="tree" id="tree-left" onclick="showPopup('Male Name: John Doe')">
+                <div class="tree" onclick="showPopup('Male Name: Alexander')">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
 
                 <!-- Interactive Right Tree -->
-                <div class="tree right" id="tree-right" onclick="showPopup('Female Name: Jane Smith')">
+                <div class="tree right" onclick="showPopup('Female Name: Isabella')">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
 
                 <!-- Interactive Bench -->
-                <div class="bench" id="bench-interactive" onclick="showPopup('Venue: Central Park\nTime: 6:00 PM\nDate: Dec 25, 2026')">
+                <div class="bench" onclick="showPopup('Venue: Winter Garden\nTime: 7:00 PM\nDate: December 24, 2026')">
                     <div class="bench-wrap">
                         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </div>
                 </div>
 
-                <!-- Other elements (Swing, Lamp, Bin, Box) stay as they were -->
+                <div class="lamp"><div class="lamp-wrap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+                <div class="bin"><span></span><span></span></div>
             </div>
         </div>
     </div>
 
-    <script>
-        function showPopup(message) {
-            document.getElementById('popup-text').innerText = message;
-            document.getElementById('custom-popup').style.display = 'flex';
-        }
+    <a href="#" class="link-to-portfolio"></a>
 
+    <script>
+        function showPopup(text) {
+            document.getElementById('popup-text').innerText = text;
+            document.getElementById('info-popup').style.display = 'flex';
+        }
         function closePopup() {
-            document.getElementById('custom-popup').style.display = 'none';
+            document.getElementById('info-popup').style.display = 'none';
         }
     </script>
 </body>
