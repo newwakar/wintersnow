@@ -1,45 +1,52 @@
-/* --- CORE SETUP --- */
-body { width: 100%; margin: 0; background: linear-gradient(#d2f0e6, #9ac8bb); }
+/* Container & Background */
+body { margin: 0; background: #d2f0e6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 .background-linear { position: fixed; width: 100%; height: 100%; background: linear-gradient(#d2f0e6, #9ac8bb); z-index: 1; }
-.wrapper { position: relative; width: 100%; padding: 40px 0; z-index: 2; }
-.winter-wrapper { position: relative; width: 600px; height: 450px; margin: 0 auto; background: #d2f0e6; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-.winter-wrap { position: absolute; width: 100%; height: 100%; z-index: 10; }
+.wrapper { position: relative; width: 100%; padding: 50px 0; z-index: 2; }
+.winter-wrapper { position: relative; width: 600px; height: 450px; margin: 0 auto; background: #d2f0e6; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
-/* --- POPUP SYSTEM --- */
-.popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 10000; }
-.popup-content { background: white; padding: 30px; border-radius: 15px; text-align: center; border: 4px solid #9ac8bb; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
-.popup-content p { color: #366a78; font-size: 1.2rem; font-weight: bold; white-space: pre-line; margin-bottom: 20px; font-family: sans-serif; }
-.popup-content button { background: #f08139; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+/* Popup Styling */
+.popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 2000; }
+.popup-content { background: #fff; padding: 30px; border-radius: 15px; text-align: center; border: 4px solid #9ac8bb; min-width: 280px; }
+.popup-content p { color: #366a78; font-weight: bold; white-space: pre-line; margin-bottom: 20px; }
+.popup-content button { background: #f08139; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
 
-/* --- INTERACTIVE HITBOXES --- */
-.interactive { cursor: pointer !important; pointer-events: auto !important; z-index: 900 !important; transition: all 0.3s ease; }
-.interactive:hover { filter: brightness(1.1); transform: scale(1.05); }
+/* Interactive Hover */
+.interactive { cursor: pointer !important; pointer-events: auto !important; z-index: 1000 !important; transition: transform 0.2s; }
+.interactive:hover { transform: scale(1.05); filter: brightness(1.1); }
 
-/* --- SNOW ANIMATION --- */
-.snow-wrapper { position: absolute; top: -900px; width: 600px; height: 1350px; z-index: 200; pointer-events: none; animation: snowFall 18s linear infinite; }
-@keyframes snowFall { 0% { transform: translateY(0); } 100% { transform: translateY(450px); } }
-.snow-wrap span { position: absolute; width: 4px; height: 4px; background: #fff; border-radius: 50%; }
-/* Spread snow flakes using nth-child logic */
-.snow-wrap span:nth-child(2n) { left: 10%; top: 5%; }
-.snow-wrap span:nth-child(3n) { left: 40%; top: 15%; }
-.snow-wrap span:nth-child(5n) { left: 80%; top: 50%; }
+/* TREE IMAGES - Rebuilt for proper look */
+.tree { position: absolute; width: 80px; height: 120px; bottom: 30px; }
+.tree-left { left: 60px; }
+.tree-right { right: 100px; transform: scale(0.9); }
 
-/* --- TREE GRAPHICS --- */
-.tree { position: absolute; bottom: 7px; left: 40px; width: 100px; height: 150px; z-index: 50; }
-.tree.right { left: auto; right: 120px; transform: scale(0.9); }
-.tree span:nth-child(4) { position: absolute; bottom: 0; left: 31px; width: 18px; height: 100px; background: #625044; } /* Trunk */
-.tree span:nth-child(1) { position: absolute; bottom: 72px; left: -4px; width: 100px; height: 100px; border-radius: 50%; background: #f2fefc; box-shadow: inset -10px 0 14px #c5f2ed; } /* Snow Top */
+.tree .trunk { position: absolute; bottom: 0; left: 35px; width: 10px; height: 40px; background: #625044; }
+.tree .leaves { position: absolute; bottom: 30px; left: 0; width: 80px; height: 80px; background: #9ac8bb; border-radius: 50%; box-shadow: inset -5px -5px 15px rgba(0,0,0,0.1); }
+.tree .snow-top { position: absolute; bottom: 60px; left: 5px; width: 70px; height: 60px; background: #fff; border-radius: 50%; box-shadow: inset -5px -5px 10px #c5f2ed; }
 
-/* --- BENCH GRAPHICS --- */
-.bench { position: absolute; bottom: 21px; left: 370px; width: 100px; height: 60px; z-index: 15; }
-.bench-wrap span { position: absolute; width: 7px; height: 40px; background: #be7435; border-radius: 4px 4px 0 0; }
-.bench-wrap span:nth-child(1) { left: 15px; bottom: 15px; width: 80px; height: 8px; } /* Seat */
-.bench-wrap span:nth-child(16) { left: 11px; bottom: 52px; width: 65px; height: 4px; background: #fff; z-index: 12; } /* Snow */
+/* BENCH IMAGES - Rebuilt for proper look */
+.bench { position: absolute; bottom: 35px; left: 300px; width: 100px; height: 50px; }
+.bench .back { position: absolute; bottom: 25px; left: 10px; width: 80px; height: 5px; background: #be7435; border-radius: 3px; }
+.bench .seat { position: absolute; bottom: 10px; left: 10px; width: 80px; height: 8px; background: #be7435; border-radius: 3px; }
+.bench .leg-l, .bench .leg-r { position: absolute; bottom: 0; width: 4px; height: 12px; background: #8c592c; }
+.bench .leg-l { left: 15px; }
+.bench .leg-r { right: 15px; }
+.bench .bench-snow { position: absolute; top: -2px; left: 10px; width: 80px; height: 4px; background: #fff; border-radius: 5px; }
 
-/* --- ENVIRONMENT --- */
-.sun { position: absolute; top: 40px; left: 70px; width: 37px; height: 37px; background: #fff; border-radius: 50%; box-shadow: 0 0 0 8px #e9fcf6, 0 0 0 20px #dcf7ee; }
-.bottom-snow { position: absolute; bottom: 0; width: 100%; height: 21px; background: #fff; z-index: 1; border-radius: 14px 14px 6px 6px; }
-.buildings span { position: absolute; bottom: 0; background: #9ac8bb; width: 40px; height: 180px; }
-.buildings span:nth-child(1) { left: 0; height: 150px; }
-.buildings span:nth-child(2) { left: 45px; height: 210px; width: 50px; }
-.buildings span:nth-child(7) { left: 280px; height: 240px; }
+/* SNOW ANIMATION - Fixed visibility */
+.snow-wrapper { position: absolute; top: -500px; width: 100%; height: 1000px; z-index: 500; pointer-events: none; animation: fall 10s linear infinite; }
+@keyframes fall { from { transform: translateY(0); } to { transform: translateY(500px); } }
+.snow-wrap span { position: absolute; width: 5px; height: 5px; background: #fff; border-radius: 50%; }
+
+/* Scattered Snow positioning */
+.snow-wrap span:nth-child(odd) { left: 10%; top: 20%; }
+.snow-wrap span:nth-child(2n) { left: 30%; top: 40%; }
+.snow-wrap span:nth-child(3n) { left: 60%; top: 10%; }
+.snow-wrap span:nth-child(4n) { left: 85%; top: 70%; }
+
+/* Environment Details */
+.sun { position: absolute; top: 40px; left: 60px; width: 40px; height: 40px; background: #fff; border-radius: 50%; box-shadow: 0 0 0 10px #e9fcf6, 0 0 0 20px #dcf7ee; }
+.bottom-snow { position: absolute; bottom: 0; width: 100%; height: 35px; background: #fff; border-radius: 20px 20px 0 0; z-index: 10; }
+.buildings span { position: absolute; bottom: 20px; background: #9ac8bb; width: 40px; }
+.buildings span:nth-child(1) { left: 40px; height: 150px; }
+.buildings span:nth-child(2) { left: 100px; height: 200px; width: 50px; }
+.buildings span:nth-child(3) { right: 50px; height: 180px; }
