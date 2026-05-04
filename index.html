@@ -10,8 +10,8 @@
     <div class="background-linear"></div>
 
     <!-- Popup Container -->
-    <div id="custom-popup" class="popup-overlay">
-        <div class="popup-content">
+    <div id="custom-popup" class="popup-overlay" onclick="closePopup()">
+        <div class="popup-content" onclick="event.stopPropagation()">
             <p id="popup-text"></p>
             <button onclick="closePopup()">Close</button>
         </div>
@@ -19,10 +19,9 @@
 
     <div class="wrapper">
         <div class="winter-wrapper">
-            <!-- Falling Snow (Full Original Set) -->
+            <!-- Falling Snow -->
             <div class="snow-wrapper big">
-                <div class="snow-wrap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                <div class="snow-wrap snd"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="snow-wrap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             </div>
 
             <div class="winter-wrap">
@@ -30,31 +29,30 @@
                 <div class="bottom-snow"><span></span></div>
                 <div class="middle-snow"></div>
                 
-                <!-- Skyline -->
-                <div class="buildings"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                <div class="buildings back"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <!-- City Skyline -->
+                <div class="buildings">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
 
-                <!-- Interactive Left Tree -->
-                <div class="tree interactive-node" onclick="showPopup('Male Name: Alexander')">
+                <!-- LEFT TREE (Male Name) -->
+                <div class="tree interactive" onclick="showPopup('Male Name: Alexander')">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
 
-                <!-- Interactive Right Tree -->
-                <div class="tree right interactive-node" onclick="showPopup('Female Name: Isabella')">
+                <!-- RIGHT TREE (Female Name) -->
+                <div class="tree right interactive" onclick="showPopup('Female Name: Isabella')">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
 
-                <!-- Interactive Bench -->
-                <div class="bench interactive-node" onclick="showPopup('Venue: Winter Garden\nTime: 7:00 PM\nDate: Dec 24, 2026')">
+                <!-- BENCH (Venue Details) -->
+                <div class="bench interactive" onclick="showPopup('Venue: Winter Garden\nTime: 7:00 PM\nDate: Dec 24, 2026')">
                     <div class="bench-wrap">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                     </div>
                 </div>
 
                 <div class="lamp"><div class="lamp-wrap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
-                <div class="swing"></div>
-                <div class="swing-over-wrap"><div class="swing-over"><span></span><span></span><span></span></div></div>
-                <div class="bin"><span></span><span></span></div>
             </div>
         </div>
     </div>
