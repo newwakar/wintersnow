@@ -278,5 +278,24 @@
     // Add your custom functionality here
   });
 </script>
+    <script>
+  document.addEventListener('click', function(event) {
+    // Check if the clicked element or its parent is a tree
+    const clickedTree = event.target.closest('.tree');
+    if (clickedTree) {
+      console.log('Tree clicked!');
+      alert('You clicked a tree!');
+      return;
+    }
+
+    // Check if the clicked element or its parent is the bench
+    const clickedBench = event.target.closest('.bench');
+    if (clickedBench) {
+      console.log('Bench clicked!');
+      alert('You clicked the bench!');
+      return;
+    }
+  });
+</script>
   </body>
 </html>
