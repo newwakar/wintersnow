@@ -1,0 +1,40 @@
+/* Interactive Cursor */
+.clickable {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.clickable:hover {
+    transform: scale(1.05);
+}
+
+.tree.right.clickable:hover {
+    transform: scale(0.95); /* Adjusted for the original 0.9 scale */
+}
+
+/* Stylish Popup Design */
+.winter-popup {
+    position: absolute;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    color: #366a78;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.winter-popup.active {
+    opacity: 1;
+    transform: translateY(-20px);
+}
