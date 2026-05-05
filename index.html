@@ -261,5 +261,22 @@
     popup.classList.add('popup-hidden');
   });
 </script>
+    <script>
+  // Add click listener for the trees
+  const trees = document.querySelectorAll('.tree');
+  trees.forEach((tree) => {
+    tree.addEventListener('click', () => {
+      alert('You clicked a tree!');
+      // Add your custom functionality here (e.g., toggle animation, open modal)
+    });
+  });
+
+  // Add click listener for the bench
+  const bench = document.querySelector('.bench');
+  bench.addEventListener('click', () => {
+    alert('You clicked the bench!');
+    // Add your custom functionality here
+  });
+</script>
   </body>
 </html>
