@@ -12,6 +12,35 @@ body {
 	z-index: 1;
 }
 
+.tree{
+	position: absolute;
+	bottom: 7px;
+	left: 40px;
+	display: block;
+	z-index: 50;
+	perspective: 100px;
+	pointer-events: auto; /* Ensures clicks pass through to this element */
+	cursor: pointer;      /* Changes cursor to pointer on hover */
+}
+.tree.right{
+	bottom: 21px;
+	left: auto;
+	right: 120px;
+	transform: scale(0.9);
+}
+
+.bench{
+	position: absolute;
+	bottom: 21px;
+	left: 370px;
+	display: block;
+	z-index: 50; /* Increased z-index to stay above background elements */
+	transform-origin: center bottom;
+	perspective: 40px;
+	pointer-events: auto; /* Ensures clicks pass through to this element */
+	cursor: pointer;      /* Changes cursor to pointer on hover */
+}
+
 #popup-container {
   position: absolute;
   top: 0;
