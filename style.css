@@ -1562,8 +1562,6 @@ body{
 
 
 
-
-
 .location-tag {
   position: fixed;
   bottom: 15px;
@@ -1576,4 +1574,10 @@ body{
   border-radius: 4px;
   font-family: Arial, sans-serif;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.location-tag:hover {
+  background-color: rgba(54, 106, 120, 1);
 }
