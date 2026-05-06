@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>జామి వారి పెండ్లిపిలుపు!</title>
+    <title>Magical Winter - pure css - #02</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="./style.css">
   </head>
@@ -14,12 +14,11 @@
 
   <div class="wrapper">
     <div class="winter-wrapper">
-      
+      <div id="popup-container" class="popup-hidden">
         <div id="welcome-popup" class="popup-overlay">
   <div class="popup-box">
     <h3>Welcome to Magical Winter!</h3>
-    <p>జామి వారి పెండ్లిపిలుపు!</p>
-    <p>trurn Landscape</p>
+    <p>Enjoy the magical winter scenery. Click on the trees or the bench to interact!</p>
     
     <button id="close-Btn">Close</button>
     <div class="checkbox-container">
@@ -860,7 +859,7 @@
     if (leftTree) {
       leftTree.addEventListener('click', () => {
         console.log('Left tree clicked!');
-        alert('వధువు:  సునీత!');
+        alert('You clicked the Left Tree!');
       });
     }
 
@@ -868,7 +867,7 @@
     if (rightTree) {
       rightTree.addEventListener('click', () => {
         console.log('Right tree clicked!');
-        alert('వరుడు: సురేష్!');
+        alert('You clicked the Right Tree!');
       });
     }
 
@@ -876,7 +875,7 @@
     if (bench) {
       bench.addEventListener('click', () => {
         console.log('Bench clicked!');
-        alert('కల్యాణ వేదిక: G కన్వెన్షన్స్, పొందూరు రోడ్, శ్రీకాకుళం!<br> తేదీ: 10/05/2026');
+        alert('You clicked the bench!');
       });
     }
   });
