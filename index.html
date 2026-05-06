@@ -18,9 +18,10 @@
   <div class="popup-content">
     <h3>Winter Magic</h3>
     <p>This is your popup message!</p>
-    <button id="close-btn">Close</button>
+    <button id="close-btn"> Close </button>
   </div>
 </div>
+      
       <div class="snow-wrapper big">
         <div class="snow-wrap">
           <span></span>
@@ -821,6 +822,7 @@
 </button>
     <script>
   const popup = document.getElementById('popup-container');
+  
   const closeBtn = document.getElementById('close-btn');
   const dontShowBtn = document.getElementById('dont-show-btn'); // If you have a second button
   const resetBtn = document.getElementById('reset-popup-btn');
@@ -852,20 +854,6 @@
     localStorage.removeItem('hideWinterPopup');
     popup.classList.remove('popup-hidden');
     alert('Popup reset successfully!');
-  });
-</script>
-    <script>
-  const popup = document.getElementById('popup-container');
-  const closeBtn = document.getElementById('close-btn');
-
-  // Example: Show popup 2 seconds after page load
-  setTimeout(() => {
-    popup.classList.remove('popup-hidden');
-  }, 2000);
-
-  // Close popup when button is clicked
-  closeBtn.addEventListener('click', () => {
-    popup.classList.add('popup-hidden');
   });
 </script>
   <script>
