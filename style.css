@@ -1,0 +1,439 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(#d2f0e6, #9ac8bb);
+}
+
+.background-linear {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(#d2f0e6, #9ac8bb);
+  z-index: 1;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  z-index: 2;
+}
+
+.winter-wrapper {
+  position: relative;
+  width: 600px;
+  height: 450px;
+  display: block;
+  margin: 0 auto;
+  z-index: 5;
+  overflow: visible;
+}
+
+.winter-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  /* Disable interactions for the background scenery... */
+  pointer-events: none;
+}
+
+/* ...but ensure interactions are re-enabled on the interactive items themselves */
+.tree,
+.bench,
+.bin {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Welcome Popup Overlay and Box */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Increased z-index so that it remains on top of everything else */
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.popup-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.popup-box h3 {
+  color: #366a78;
+  margin-bottom: 15px;
+}
+
+.popup-box p {
+  color: #4f4c4d;
+  margin-bottom: 20px;
+}
+
+#close-Btn {
+  background: #366a78;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#close-Btn:hover {
+  background: #274b55;
+}
+
+.checkbox-container {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #777;
+}
+
+.popup-hidden {
+  display: none !important;
+}
+
+/* Portfolio Link */
+.link-to-portfolio {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 20;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-color: #212121;
+  background-image: url('https://blog.codepen.io/wp-content/uploads/2012/06/Button-White-Small.png');
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, .1);
+  transition: opacity .2s, border-radius .2s, box-shadow .2s;
+  transition-timing-function: ease-out;
+  pointer-events: auto;
+}
+
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(0, 0, 0, .1);
+}
+
+/* Sun Animation */
+.sun {
+  position: absolute;
+  top: 40px;
+  left: 70px;
+  width: 37px;
+  display: block;
+  height: 37px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px #e9fcf6, 0 0 0 20px #dcf7ee;
+  z-index: 1;
+  animation: brilla-sun 3s alternate infinite;
+}
+
+@keyframes brilla-sun {
+  0%, 100% {
+    box-shadow: 0 0 0 8px #e9fcf6, 0 0 0 20px #dcf7ee;
+  }
+  50% {
+    box-shadow: 0 0 0 5px #e9fcf6, 0 0 0 14px #dcf7ee;
+  }
+}
+
+/* Tree Design */
+.tree {
+  position: absolute;
+  bottom: 7px;
+  left: 40px;
+  display: block;
+  z-index: 50;
+  perspective: 100px;
+}
+.tree.right {
+  bottom: 21px;
+  left: auto;
+  right: 120px;
+  transform: scale(0.9);
+}
+.tree span {
+  position: absolute;
+  bottom: 72px;
+  left: -4px;
+  display: block;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f2fefc;
+  box-shadow: inset -10px 0 14px 0 #c5f2ed;
+  transform: rotate(20deg);
+}
+.tree span:nth-child(2) {
+  bottom: 72px;
+  left: -24px;
+  z-index: 2;
+  width: 70px;
+  height: 70px;
+  box-shadow: inset 5px 0 7px 0 #c5f2ed;
+  transform: rotate(-20deg);
+}
+.tree span:nth-child(3) {
+  bottom: 97px;
+  left: -9px;
+  z-index: 2;
+  width: 90px;
+  height: 90px;
+  box-shadow: inset 5px 0 7px 0 #c5f2ed;
+  transform: rotate(40deg);
+}
+.tree span:nth-child(4) {
+  bottom: 0;
+  left: 31px;
+  z-index: 1;
+  width: 18px;
+  height: 100px;
+  border-radius: 0;
+  background-color: #625044;
+  box-shadow: inset 6px 0 13px 0 #b58d74;
+  transform: rotate(0);
+  transform-origin: center bottom;
+  transform: rotateX(10deg);
+}
+.tree span:nth-child(5) {
+  bottom: 40px;
+  left: 36px;
+  z-index: 0;
+  width: 6px;
+  height: 40px;
+  border-radius: 0;
+  background-color: #625044;
+  box-shadow: none;
+  transform: rotate(0);
+  transform-origin: center bottom;
+  transform: rotate(20deg);
+}
+.tree span:nth-child(6) {
+  bottom: 50px;
+  left: 29px;
+  z-index: 1;
+  width: 6px;
+  height: 40px;
+  border-radius: 0;
+  background-color: #625044;
+  box-shadow: none;
+  box-shadow: inset -3px -4px 22px -4px #b18b73, 0 5px 7px -7px #b18b73;
+  transform: rotate(0);
+  transform-origin: center bottom;
+  transform: rotate(-25deg);
+}
+
+/* Bench Design */
+.bench {
+  position: absolute;
+  bottom: 21px;
+  left: 370px;
+  display: block;
+  z-index: 2;
+  transform-origin: center bottom;
+  perspective: 40px;
+}
+.bench-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  z-index: 2;
+}
+.bench-wrap span {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  display: block;
+  z-index: 5;
+  width: 7px;
+  height: 40px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #be7435;
+}
+.bench-wrap span:nth-child(2) {
+  left: 85px;
+}
+.bench-wrap span:nth-child(3) {
+  left: 0;
+  bottom: 33px;
+  border-radius: 4px;
+  width: 12px;
+  height: 7px;
+}
+.bench-wrap span:nth-child(4) {
+  left: 85px;
+  bottom: 33px;
+  border-radius: 4px;
+  width: 12px;
+  height: 7px;
+}
+.bench-wrap span:nth-child(5) {
+  left: 5px;
+  bottom: 10px;
+  border-radius: 0;
+  width: 85px;
+  height: 6px;
+  background-color: #8c592c;
+  z-index: 4;
+}
+.bench-wrap span:nth-child(6) {
+  left: 5px;
+  bottom: 22px;
+  border-radius: 0;
+  width: 85px;
+  height: 6px;
+  background-color: #5e3e25;
+  z-index: 4;
+}
+.bench-wrap span:nth-child(7) {
+  bottom: 35px;
+  width: 7px;
+  height: 20px;
+  background-color: #8c592c;
+  z-index: 4;
+}
+.bench-wrap span:nth-child(8) {
+  left: 85px;
+  bottom: 35px;
+  width: 7px;
+  height: 20px;
+  background-color: #8c592c;
+  z-index: 4;
+}
+.bench-wrap span:nth-child(9) {
+  left: 5px;
+  bottom: 47px;
+  border-radius: 0;
+  width: 85px;
+  height: 6px;
+  background-color: #5e3e25;
+  z-index: 3;
+}
+.bench-wrap span:nth-child(10) {
+  left: 50px;
+  bottom: 25px;
+  width: 9px;
+  height: 26px;
+  background-color: #be7435;
+  border-radius: 0;
+  z-index: 1;
+}
+.bench-wrap span:nth-child(11) {
+  left: 62px;
+  bottom: 25px;
+  width: 9px;
+  height: 26px;
+  background-color: #be7435;
+  border-radius: 0;
+  z-index: 1;
+}
+.bench-wrap span:nth-child(12) {
+  left: 74px;
+  bottom: 25px;
+  width: 9px;
+  height: 26px;
+  background-color: #be7435;
+  border-radius: 0;
+  z-index: 1;
+}
+.bench-wrap span:nth-child(13) {
+  left: 38px;
+  bottom: 25px;
+  width: 9px;
+  height: 26px;
+  background-color: #be7435;
+  border-radius: 0;
+  z-index: 1;
+}
+.bench-wrap span:nth-child(14) {
+  left: 26px;
+  bottom: 25px;
+  width: 9px;
+  height: 26px;
+  background-color: #be7435;
+  border-radius: 0;
+  z-index: 1;
+}
+.bench-wrap span:nth-child(15) {
+  left: 14px;
+  bottom: 25px;
+  width: 9px;
+  height: 26px;
+  background-color: #be7435;
+  border-radius: 0;
+  z-index: 1;
+}
+.bench-wrap span:nth-child(16) {
+  left: 11px;
+  bottom: 52px;
+  border-radius: 30%;
+  width: 65px;
+  height: 4px;
+  background-color: #fff;
+  z-index: 12;
+  transform: skew(52deg, 1deg);
+}
+
+.bin {
+  position: absolute;
+  bottom: 21px;
+  right: 30px;
+  width: 25px;
+  height: 40px;
+  display: block;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background-color: #ce6f13;
+  z-index: 2;
+}
+.bin span {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  width: 19px;
+  height: 10px;
+  display: block;
+  border-radius: 4px;
+  background-color: #333;
+  z-index: 2;
+}
+.bin span:nth-child(2) {
+  top: 7px;
+  background-color: #ff8f45;
+  z-index: 1;
+}
